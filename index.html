@@ -157,6 +157,28 @@
 
 </style>
 </head>
+    #backToTop {
+  position: fixed;       
+  bottom: 30px;          
+  right: 30px;           
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: #FF69B4; /* صورتی روشن */
+  color: white;
+  border: none;
+  border-radius: 50%;       /* دایره‌ای */
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  display: none;            
+  z-index: 1000;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+#backToTop:hover {
+  background-color: #FF1493; /* صورتی تیره‌تر */
+  transform: scale(1.1);      /* کمی بزرگ شدن هنگام هاور */
+}
 <body>
 
 <header>
@@ -414,6 +436,7 @@ document.querySelectorAll('.image-card img').forEach(img=>{
 overlay.addEventListener('click',()=>{ overlay.style.display='none'; });
 
 </script>
-
+<!-- دکمه برگشت به بالا -->
+<button id="backToTop">⬆️</button>
 </body>
 </html>
