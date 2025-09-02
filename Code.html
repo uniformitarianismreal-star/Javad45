@@ -1,0 +1,46 @@
+// ایجاد دکمه برگشت به بالا
+const btn = document.createElement("button");
+btn.id = "backToTop";
+btn.innerHTML = "⬆️";
+document.body.appendChild(btn);
+
+// استایل دکمه
+btn.style.position = "fixed";
+btn.style.bottom = "30px";
+btn.style.right = "30px";
+btn.style.width = "60px";
+btn.style.height = "60px";
+btn.style.fontSize = "24px";
+btn.style.backgroundColor = "#FF69B4";
+btn.style.color = "white";
+btn.style.border = "none";
+btn.style.borderRadius = "50%";
+btn.style.cursor = "pointer";
+btn.style.boxShadow = "0 6px 12px rgba(0,0,0,0.3)";
+btn.style.display = "none";
+btn.style.zIndex = "1000";
+btn.style.transition = "transform 0.2s, background-color 0.2s";
+
+// هاور دکمه
+btn.addEventListener("mouseover", () => {
+  btn.style.backgroundColor = "#FF1493";
+  btn.style.transform = "scale(1.1)";
+});
+btn.addEventListener("mouseout", () => {
+  btn.style.backgroundColor = "#FF69B4";
+  btn.style.transform = "scale(1)";
+});
+
+// نمایش دکمه هنگام اسکرول
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+});
+
+// کلیک روی دکمه: برگشت به بالا
+btn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
