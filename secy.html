@@ -1,0 +1,31 @@
+<button onclick="topFunction()" id="topBtn">⬆️</button>
+
+<style>
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff0055;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+</style>
+
+<script>
+let mybutton = document.getElementById("topBtn");
+window.onscroll = function() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+};
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
